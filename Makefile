@@ -50,9 +50,9 @@ SRCS = $(addprefix $(SRC_PATH), $(SRC))
 
 BONUS_SRCS = $(addprefix $(SRC_PATH), $(BONUS_SRC))
 
-BONUS_SRCS += bonus/checker.c bonus/utils.c bonus/swap.c \
-			  bonus/rotate.c bonus/reverse_rotate.c \
-			  bonus/push.c bonus/print_result.c \
+BONUS_SRCS += bonus/checker_bonus.c bonus/utils_bonus.c bonus/swap_bonus.c \
+			  bonus/rotate_bonus.c bonus/reverse_rotate_bonus.c \
+			  bonus/push_bonus.c bonus/print_result_bonus.c \
 
 .PHONY: all clean fclean re bonus
 
