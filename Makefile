@@ -67,7 +67,7 @@ clean:
 
 fclean: clean
 	make -C ./libft fclean
-	rm -r $(NAME) checker
+	rm -f $(NAME) checker
 
 checker: $(BONUS_SRCS)
 	make -C ./libft
