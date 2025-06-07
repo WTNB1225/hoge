@@ -54,24 +54,31 @@ BONUS_SRCS += bonus/checker_bonus.c bonus/utils_bonus.c bonus/swap_bonus.c \
 			  bonus/rotate_bonus.c bonus/reverse_rotate_bonus.c \
 			  bonus/push_bonus.c bonus/print_result_bonus.c \
 
+OBJ = $(SRCS:.c=.o)
+BONUS_OBJ = $(BONUS_SRCS:.c=.o)
+
 .PHONY: all clean fclean re bonus
 
-$(NAME): $(SRCS)
+%.o: %.c
+	$(CC) $(CFLAGS) $(INCS) -c $< -o $@
+
+$(NAME): $(OBJ)
 	make -C ./libft
-	$(CC) $(CFLAGS) -o $(NAME) $(SRCS) $(INCS) -L libft -lft
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(INCS) -L libft -lft
 
 all: $(NAME)
 
 clean:
 	make -C ./libft clean
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	make -C ./libft fclean
 	rm -f $(NAME) checker
 
-checker: $(BONUS_SRCS)
+checker: $(BONUS_OBJ)
 	make -C ./libft
-	$(CC) $(CFLAGS) -o checker $(BONUS_SRCS) $(INCS) -L libft -lft
+	$(CC) $(CFLAGS) -o checker $(BONUS_OBJ) $(INCS) -L libft -lft
 
 bonus: checker
 
