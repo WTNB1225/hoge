@@ -28,6 +28,8 @@ static void	exit_error_bonus(t_stack *stack_a, t_stack *stack_b, void *p1,
 	free_all(stack_b);
 	free(p1);
 	free(p2);
+	free_gnl();
+	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_FAILURE);
 }
 
@@ -64,9 +66,11 @@ int	main(int argc, char **argv)
 		return (0);
 	if (argc == 2)
 		argv = set_new_arg(&argc, argv, &flag);
-	if (!validate_args(argc, argv))
+	if (!validate_args(argc, argv, flag))
 		exit_error(NULL, NULL, NULL);
 	array = init_array(argc, argv);
+	if (flag == 1)
+		free_double_ptr(argv);
 	stack_a = init_stack(argc, array);
 	stack_b = head_node();
 	if (!stack_b)
@@ -75,7 +79,5 @@ int	main(int argc, char **argv)
 	while (line)
 		line = one_line_operation(stack_a, stack_b, array, line);
 	print_result(stack_a, stack_b);
-	if (flag == 1)
-		free_double_ptr(argv);
 	return (free_all_memory(stack_a, stack_b, array, NULL), 0);
 }

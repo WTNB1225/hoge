@@ -91,12 +91,16 @@ static int	validate_duplicate(char **argv)
 	return (1);
 }
 
-int	validate_args(int argc, char **argv)
+int	validate_args(int argc, char **argv, int flag)
 {
 	if (argc < 2)
 		return (0);
 	argv++;
 	if (!validate_digit(argv) || !validate_duplicate(argv))
+	{
+		if (flag == 1)
+			free_double_ptr(argv);
 		return (0);
+	}
 	return (1);
 }

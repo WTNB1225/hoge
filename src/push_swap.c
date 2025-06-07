@@ -48,7 +48,7 @@ int	main(int argc, char **argv)
 		return (0);
 	if (argc == 2)
 		argv = set_new_arg(&argc, argv, &flag);
-	if (!validate_args(argc, argv))
+	if (!validate_args(argc, argv, flag))
 		exit_error(NULL, NULL, NULL);
 	array = init_array(argc, argv);
 	stack_a = init_stack(argc, array);
