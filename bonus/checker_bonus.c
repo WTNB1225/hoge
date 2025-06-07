@@ -28,7 +28,6 @@ static void	exit_error_bonus(t_stack *stack_a, t_stack *stack_b, void *p1,
 	free_all(stack_b);
 	free(p1);
 	free(p2);
-	free_gnl();
 	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_FAILURE);
 }

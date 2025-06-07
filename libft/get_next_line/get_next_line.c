@@ -103,14 +103,3 @@ char	*get_next_line(int fd)
 	backup = make_new_backup(backup);
 	return (line);
 }
-
-void	free_gnl(void)
-{
-	static char	*backup;
-
-	if (backup)
-	{
-		free(backup);
-		backup = NULL;
-	}
-}
