@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wyuki <wyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 22:18:33 by wyuki             #+#    #+#             */
-/*   Updated: 2025/06/01 18:00:22 by wyuki            ###   ########.fr       */
+/*   Updated: 2025/06/07 13:01:36 by wyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int	is_command(const char *line)
 {
@@ -33,25 +33,25 @@ int	is_command(const char *line)
 void	do_operation(char *line, t_stack *stack_a, t_stack *stack_b)
 {
 	if (!ft_strcmp(line, "sa"))
-		sa(stack_a);
+		sa_bonus(stack_a);
 	else if (!ft_strcmp(line, "sb"))
-		sb(stack_b);
+		sb_bonus(stack_b);
 	else if (!ft_strcmp(line, "ss"))
-		ss(stack_a, stack_b);
+		ss_bonus(stack_a, stack_b);
 	else if (!ft_strcmp(line, "ra"))
-		ra(stack_a);
+		ra_bonus(stack_a);
 	else if (!ft_strcmp(line, "rb"))
-		rb(stack_b);
+		rb_bonus(stack_b);
 	else if (!ft_strcmp(line, "rr"))
-		rr(stack_a, stack_b);
+		rr_bonus(stack_a, stack_b);
 	else if (!ft_strcmp(line, "rra"))
-		rra(stack_a);
+		rra_bonus(stack_a);
 	else if (!ft_strcmp(line, "rrb"))
-		rrb(stack_b);
+		rrb_bonus(stack_b);
 	else if (!ft_strcmp(line, "rrr"))
-		rrr(stack_a, stack_b);
+		rrr_bonus(stack_a, stack_b);
 	else if (!ft_strcmp(line, "pa"))
-		pa(stack_a, stack_b);
+		pa_bonus(stack_a, stack_b);
 	else if (!ft_strcmp(line, "pb"))
-		pb(stack_a, stack_b);
+		pb_bonus(stack_a, stack_b);
 }

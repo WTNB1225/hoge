@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   swap_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wyuki <wyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 02:10:17 by wyuki             #+#    #+#             */
-/*   Updated: 2025/05/29 02:52:32 by wyuki            ###   ########.fr       */
+/*   Updated: 2025/06/07 13:00:41 by wyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ static void	swap(t_stack *stack)
 	stack->next->next->value = tmp;
 }
 
-void	sa(t_stack *stack_a)
+void	sa_bonus(t_stack *stack_a)
 {
 	swap(stack_a);
 }
 
-void	sb(t_stack *stack_b)
+void	sb_bonus(t_stack *stack_b)
 {
 	swap(stack_b);
 }
 
-void	ss(t_stack *stack_a, t_stack *stack_b)
+void	ss_bonus(t_stack *stack_a, t_stack *stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);

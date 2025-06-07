@@ -37,9 +37,7 @@ SRC = error.c \
 
 BONUS_SRC = error.c \
 	init.c \
-	sort.c \
 	sort_utils.c \
-	sort_under_five.c \
 	stack.c \
 	stack_utils.c \
 	utils.c \
