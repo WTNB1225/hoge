@@ -47,6 +47,11 @@ static char	*make_new_backup(char *backup)
 		i++;
 	new_backup = ft_substr(backup, i, len - i);
 	free(backup);
+	if (new_backup[0] == '\0')
+	{
+		free(new_backup);
+		return (NULL);
+	}
 	return (new_backup);
 }
 
